@@ -1,0 +1,12 @@
+{
+  "0": {"predicted_cell_type": "Capsule"},
+  "1": {"predicted_cell_type": "Medulla cords"},
+  "2": {"predicted_cell_type": "Medulla sinuses"},
+  "3": {"predicted_cell_type": "Medulla cords"},
+  "4": {"predicted_cell_type": "Capsule"},
+  "5": {"predicted_cell_type": "Medulla cords"},
+  "6": {"predicted_cell_type": "Medulla cords"},
+  "7": {"predicted_cell_type": "Pericapsular adipose tissue"},
+  "8": {"predicted_cell_type": "Medulla cords"},
+  "9": {"predicted_cell_type": "Medulla cords"}
+}

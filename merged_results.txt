@@ -1,0 +1,152 @@
+{
+  "0": {
+    "predicted_cell_type": "Medulla cords"
+  },
+  "1": {
+    "predicted_cell_type": "Medulla sinuses"
+  },
+  "2": {
+    "predicted_cell_type": "Medulla cords"
+  },
+  "3": {
+    "predicted_cell_type": "Cortex"
+  },
+  "4": {
+    "predicted_cell_type": "Cortex"
+  },
+  "5": {
+    "predicted_cell_type": "Pericapsular adipose tissue"
+  },
+  "6": {
+    "predicted_cell_type": "Follicle"
+  },
+  "7": {
+    "predicted_cell_type": "Medulla sinuses"
+  },
+  "8": {
+    "predicted_cell_type": "Pericapsular adipose tissue"
+  },
+  "9": {
+    "predicted_cell_type": "Pericapsular adipose tissue"
+  },
+  "10": {
+    "predicted_cell_type": "Capsule"
+  },
+  "11": {
+    "predicted_cell_type": "Medulla cords"
+  },
+  "12": {
+    "predicted_cell_type": "Medulla sinuses"
+  },
+  "13": {
+    "predicted_cell_type": "Medulla cords"
+  },
+  "14": {
+    "predicted_cell_type": "Capsule"
+  },
+  "15": {
+    "predicted_cell_type": "Medulla cords"
+  },
+  "16": {
+    "predicted_cell_type": "Medulla cords"
+  },
+  "17": {
+    "predicted_cell_type": "Pericapsular adipose tissue"
+  },
+  "18": {
+    "predicted_cell_type": "Medulla cords"
+  },
+  "19": {
+    "predicted_cell_type": "Medulla cords"
+  },
+  "20": {
+    "predicted_cell_type": "Medulla cords"
+  },
+  "21": {
+    "predicted_cell_type": "Cortex"
+  },
+  "22": {
+    "predicted_cell_type": "Medulla cords"
+  },
+  "23": {
+    "predicted_cell_type": "Cortex"
+  },
+  "24": {
+    "predicted_cell_type": "Medulla sinuses"
+  },
+  "25": {
+    "predicted_cell_type": "Cortex"
+  },
+  "26": {
+    "predicted_cell_type": "Medulla sinuses"
+  },
+  "27": {
+    "predicted_cell_type": "Medulla sinuses"
+  },
+  "28": {
+    "predicted_cell_type": "Follicle"
+  },
+  "29": {
+    "predicted_cell_type": "Capsule"
+  },
+  "30": {
+    "predicted_cell_type": "Follicle"
+  },
+  "31": {
+    "predicted_cell_type": "Pericapsular adipose tissue"
+  },
+  "32": {
+    "predicted_cell_type": "Medulla sinuses"
+  },
+  "33": {
+    "predicted_cell_type": "Cortex"
+  },
+  "34": {
+    "predicted_cell_type": "Pericapsular adipose tissue"
+  },
+  "35": {
+    "predicted_cell_type": "Medulla cords"
+  },
+  "36": {
+    "predicted_cell_type": "Medulla cords"
+  },
+  "37": {
+    "predicted_cell_type": "Cortex"
+  },
+  "38": {
+    "predicted_cell_type": "Cortex"
+  },
+  "39": {
+    "predicted_cell_type": "Hilum"
+  },
+  "40": {
+    "predicted_cell_type": "Medulla cords"
+  },
+  "41": {
+    "predicted_cell_type": "Cortex"
+  },
+  "42": {
+    "predicted_cell_type": "Medulla cords"
+  },
+  "43": {
+    "predicted_cell_type": "Medulla cords"
+  },
+  "44": {
+    "predicted_cell_type": "Cortex"
+  },
+  "45": {
+    "predicted_cell_type": "Medulla cords"
+  },
+  "46": {
+    "predicted_cell_type": "Cortex"
+  },
+  "47": {
+    "predicted_cell_type": "Subcapsular sinus"
+  },
+  "48": {
+    "predicted_cell_type": "Medulla sinuses"
+  },
+  "49": {
+    "predicted_cell_type": "Medulla cords"
+  }
+}
