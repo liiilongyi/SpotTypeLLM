@@ -1,0 +1,1 @@
+{0: 'follicle', 1: 'pericapsular adipose tissue', 2: 'medulla sinuses', 3: 'medulla sinuses', 4: 'pericapsular adipose tissue', 5: 'medulla cords', 6: 'medulla cords', 7: 'medulla cords', 8: 'cortex', 9: 'hilum'}

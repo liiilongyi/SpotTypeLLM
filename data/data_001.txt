@@ -1,0 +1,98 @@
+You are an expert in pathology. Please classify the anatomical structures of the spatial transcriptomic spots based on the following gene expression features.
+Task Instructions:
+Determine the lymph node anatomical structures based on gene expression features (primary basis) and single-cell references (auxiliary reference).
+
+Please strictly follow the IF-THEN logic with the following priorities for your judgment. The weight of gene expression levels is much higher than that of single-cell reference hints.
+
+1. Adipose and Stroma (Pericapsular adipose tissue / Capsule)
+Pericapsular adipose tissue:
+Absolute Evidence: FABP4, APOD, CFD, FASN.
+Note: Adipose tissue is often accompanied by high expression of ACTA2 (stromal support) and the reference hint "stromal cell". Rule: As long as FABP4/APOD appears, even if ACTA2 is very high, it must be classified as Adipose, rather than Capsule.
+Capsule:
+Characteristics: Pure dense connective tissue. Characterized by high expression of ACTA2, COL1A1, VIM.
+Exclusivity Rule: Must have no adipose genes (FABP4=0), and no obvious endothelial genes (low STAB2/CLEC4M).
+
+2. Vascular Entry/Exit Zone (Hilum)
+Hilum:
+Characteristics: Large blood vessels + connective tissue.
+Combinatorial Signal: High expression of ACTA2 (smooth muscle) accompanied by significant endothelial signals (STAB2, PECAM1, PROX1).
+Differentiation from Capsule: Capsule only has ACTA2 without endothelium; Hilum is ACTA2 + endothelium.
+
+3. Lymphoid Follicle (Follicle)
+Follicle:
+Core Genes: CXCL13 (strongest specificity), CD22, MS4A1 (CD20), CD79B, CR2.
+Judgment: As long as CXCL13 or multiple B cell markers appear, directly lock in as Follicle.
+
+4. Medullary Zone (Medulla Sinuses vs Medulla Cords) — Difficult to Distinguish
+Medulla sinuses (Channels):
+Core Genes: Lymphatic endothelial markers CLEC4M, STAB2, LYVE1, PROX1, MMRN1.
+Common Accompaniments: Macrophages (CD68, MARCO).
+Rule: As long as significant CLEC4M/STAB2/LYVE1 is detected, prioritize classifying as Sinuses. Even if the reference hint is "NK cell" or "T cell", classify as Sinuses (because cells flow within the sinuses).
+Medulla cords (Parenchyma):
+Core Genes: Plasma cell markers IGLC1, IGHG3, MZB1, JCHAIN, DERL3.
+Characteristics: This is the factory where plasma cells secrete antibodies. If high expression of Immunoglobulin (Ig) related genes is observed with weak endothelial signals, classify as Cords.
+
+5. Cortical Zone (Cortex)
+Cortex:
+Characteristics: T cell zone. Genes include CCL19, CCR7 (homing), LCK, CD3D, CD7.
+Exclusivity: If there are only pan-T cell markers (CD8A) but no chemokines (CCL19), and they are accompanied by endothelial signals, it is more likely Sinuses. Only pure T cell signals should be classified as Cortex.
+
+6. Others
+Trabeculae: Similar to Capsule, featuring ACTA2/COL1A1 signals extending inwards, usually adjacent to Sinuses.
+Decision Cheat Sheet:
+Has FABP4 / APOD ? -> Adipose (even with ACTA2)
+Has CXCL13 / CD22 ? -> Follicle
+Has ACTA2 > 10.0 and STAB2/PROX1 ? -> Hilum
+Has ACTA2 > 10.0 with no adipose/endothelium ? -> Capsule
+Has IGLC1 / MZB1 ? -> Medulla cords
+Has CLEC4M / STAB2 / LYVE1 ? -> Medulla sinuses
+Has CCL19 / LCK ? -> Cortex
+
+Data to be analyzed:
+
+Spot 0:
+Highly expressed genes: {'CLDN5': 0.0, 'CLEC4M': 7.0, 'STAB2': 3.0, 'PPFIBP1': 2.0, 'PROX1': 2.0, 'FCGR3A': 0.0, 'MS4A1': 1.0, 'CD68': 5.0}
+Single-cell reference: endothelial cell;stromal cell;endothelial cell
+
+Spot 1:
+Highly expressed genes: {'PROX1': 1.0, 'MT-ND4': 4.0, 'CCL14': 4.0, 'MARCO': 0.0, 'CD79B': 2.0, 'FCGR3A': 1.0, 'CD68': 7.0, 'ACTA2': 3.0}
+Single-cell reference: stromal cell;stromal cell;stromal cell
+
+Spot 2:
+Highly expressed genes: {'CD209': 0.0, 'STAB2': 2.0, 'RGS16': 2.0, 'LYVE1': 1.0, 'CLEC4G': 5.0, 'FCGR3A': 1.0, 'CD68': 10.0, 'ITGAX': 2.0}
+Single-cell reference: stromal cell;stromal cell;stromal cell
+
+Spot 3:
+Highly expressed genes: {'STAB2': 4.0, 'CCL14': 3.0, 'CEMIP': 1.0, 'CLEC4M': 4.0, 'CD209': 0.0, 'PAX5': 1.0, 'MS4A1': 1.0, 'VIM': 11.0}
+Single-cell reference: endothelial cell;stromal cell;endothelial cell
+
+Spot 4:
+Highly expressed genes: {'CEMIP': 0.0, 'STAB2': 0.0, 'MARCO': 0.0, 'DAB2': 0.0, 'KCTD12': 1.0, 'CEACAM8': 8.0, 'HLA-DRA': 3.0, 'VIM': 8.0}
+Single-cell reference: stromal cell;endothelial cell;plasmacytoid dendritic cell
+
+Spot 5:
+Highly expressed genes: {'STAB2': 5.0, 'CD209': 2.0, 'CLEC4G': 7.0, 'CLEC4M': 5.0, 'CCL14': 6.0, 'PCNA': 3.0, 'PAX5': 1.0, 'CD19': 3.0}
+Single-cell reference: endothelial cell;stromal cell;stromal cell
+
+Spot 6:
+Highly expressed genes: {'SEC11C': 4.0, 'IGLC1': 7.0, 'CCL14': 4.0, 'MARCO': 2.0, 'HERPUD1': 3.0, 'FCGR3A': 0.0, 'CD8A': 8.0, 'CD68': 4.0}
+Single-cell reference: endothelial cell;stromal cell;stromal cell
+
+Spot 7:
+Highly expressed genes: {'FABP4': 2.0, 'PLIN1': 4.0, 'FASN': 1.0, 'G0S2': 4.0, 'LPL': 2.0, 'CEACAM8': 9.0, 'FCGR3A': 0.0, 'CD68': 3.0}
+Single-cell reference: endothelial cell;stromal cell;endothelial cell
+
+Spot 8:
+Highly expressed genes: {'PPP3CC': 2.0, 'PYHIN1': 3.0, 'SMAD3': 1.0, 'FYN': 1.0, 'BCAS4': 1.0, 'PAX5': 0.0, 'CXCR5': 1.0, 'CD8A': 5.0}
+Single-cell reference: stromal cell;stromal cell;stromal cell
+
+Spot 9:
+Highly expressed genes: {'STAB2': 3.0, 'PROX1': 1.0, 'MARCO': 0.0, 'CLEC4M': 0.0, 'LYVE1': 3.0, 'FCGR3A': 0.0, 'CD68': 6.0, 'VIM': 10.0}
+Single-cell reference: endothelial cell;endothelial cell;endothelial cell
+
+Please choose from the following options:[Medulla sinuses, Cortex, Medulla cords, Hilum, Pericapsular adipose tissue, Capsule, Medulla vessels, Follicle, Subcapsular sinus, Trabeculae]
+Please output the results directly in JSON format. The format is as follows:
+{
+"0": {"predicted_cell_type": "..."},
+"1": {"predicted_cell_type": "..."}
+}

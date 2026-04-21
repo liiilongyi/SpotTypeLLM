@@ -1,0 +1,1 @@
+{0: 'medulla cords', 1: 'cortex', 2: 'medulla cords', 3: 'cortex', 4: 'medulla cords', 5: 'cortex', 6: 'medulla sinuses', 7: 'medulla cords', 8: 'cortex', 9: 'capsule'}
